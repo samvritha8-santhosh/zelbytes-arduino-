@@ -1,16 +1,16 @@
 # Hardware Inventory
 
-## Board
-Arduino Uno
+## Arduino Board
+- Arduino Uno R3
 
-## Bench ID
-Uno #1
+## USB Connection
+- USB Type-B Cable
 
-## Components
-- Breadboard
-- USB Cable
-- LEDs
-- Push Buttons
+## Bench Information
+- Bench ID: Personal Laptop Setup
 
-## Notes
-Day 1 setup completed.
+## COM Port
+- COM10
+
+## Board ID
+- Arduino Uno
