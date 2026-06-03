@@ -48,6 +48,4 @@ Valve should immediately de-energize.
 * Never connect bench supply directly to live plumbing.
 * Disconnect power before modifying wiring.
 
-## Photo Documentation
 
-Save a photo showing:
