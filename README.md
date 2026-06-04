@@ -1,12 +1,12 @@
-# Zelbytes Arduino
+# Zelbytes Arduino Internship Repository
 
-Day 1–2 firmware setup.
+Name: Samvritha Santhosh
 
-## Completed
-- Arduino IDE installed
-- Arduino Uno configured
-- Blink sketch uploaded
-- Serial Hello sketch uploaded
+Board: Arduino Uno R3 Compatible
 
-## Hardware
-See docs/HARDWARE.md
+## Tasks
+- Task1: Arduino Foundations (Day01-02)
+- Task2: Git for Firmware & Project Structure(Day03-05)
+- Task3: Manual Irrigation Toggle(Day06)
+
+This repository contains all internship tasks, code, documentation, and wiring images.
