@@ -47,7 +47,7 @@ Shows:
 ## Manual Shutoff Valve
 
 Location:
-[Fill in actual bench location]
+[Between water reservoir and solenoid valve inlet.]
 
 Use before disconnecting plumbing.
 
