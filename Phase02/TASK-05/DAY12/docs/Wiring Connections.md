@@ -34,4 +34,4 @@ Valve - → Relay NO terminal
 
 Relay COM → Supply Negative
 
-Use external power supply suitable for the valve.
+Use external power supply suitable for the valve. suitable for the valve.
