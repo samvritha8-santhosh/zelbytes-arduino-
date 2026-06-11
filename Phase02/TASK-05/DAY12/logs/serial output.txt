@@ -1,1 +1,36 @@
 
+=================================
+TASK 5 STATE MACHINE
+=================================
+
+[0 ms] STARTUP -> IDLE
+
+[1000 ms] IDLE -> MONITORING
+
+[1000 ms] State=MONITORING | Soil=55% | Humidity=68%
+
+[2000 ms] State=MONITORING | Soil=53% | Humidity=67%
+
+Low Moisture Count = 1
+[3000 ms] State=MONITORING | Soil=20% | Humidity=65%
+
+Low Moisture Count = 2
+[4000 ms] State=MONITORING | Soil=19% | Humidity=64%
+
+Low Moisture Count = 3
+
+[5000 ms] MONITORING -> IRRIGATING
+
+[5000 ms] State=IRRIGATING | Soil=18% | Humidity=64%
+
+[6000 ms] State=IRRIGATING | Soil=28% | Humidity=63%
+
+[7000 ms] State=IRRIGATING | Soil=35% | Humidity=63%
+
+[8000 ms] IRRIGATING -> COOLDOWN
+
+[8000 ms] State=COOLDOWN | Soil=42% | Humidity=62%
+
+[13000 ms] COOLDOWN -> MONITORING
+
+[13000 ms] State=MONITORING | Soil=43% | Humidity=62%
