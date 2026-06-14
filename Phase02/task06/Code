@@ -1,1 +1,137 @@
+#define MOTOR_PWM 9
+#define MOTOR_IN1 6
+#define MOTOR_IN2 7
 
+#define RELAY_PIN 8
+#define LED_PIN 13
+#define ESTOP_PIN 2
+
+volatile bool emergencyStop = false;
+
+void emergencyISR()
+{
+  emergencyStop = true;
+}
+
+void setup()
+{
+  Serial.begin(9600);
+
+  pinMode(MOTOR_PWM, OUTPUT);
+  pinMode(MOTOR_IN1, OUTPUT);
+  pinMode(MOTOR_IN2, OUTPUT);
+
+  pinMode(RELAY_PIN, OUTPUT);
+  pinMode(LED_PIN, OUTPUT);
+
+  pinMode(ESTOP_PIN, INPUT_PULLUP);
+
+  digitalWrite(MOTOR_IN1, HIGH);
+  digitalWrite(MOTOR_IN2, LOW);
+
+  analogWrite(MOTOR_PWM, 0);
+
+  // Active LOW Relay
+  digitalWrite(RELAY_PIN, HIGH);
+
+  // LED OFF initially
+  digitalWrite(LED_PIN, LOW);
+
+  attachInterrupt(
+    digitalPinToInterrupt(ESTOP_PIN),
+    emergencyISR,
+    FALLING
+  );
+
+  Serial.println("================================");
+  Serial.println("Commands:");
+  Serial.println("M0-M255");
+  Serial.println("OPEN");
+  Serial.println("CLOSE");
+  Serial.println("RESET");
+  Serial.println("================================");
+}
+
+void loop()
+{
+  if (emergencyStop)
+  {
+    analogWrite(MOTOR_PWM, 0);
+
+    // Close valve
+    digitalWrite(RELAY_PIN, HIGH);
+
+    // LED OFF
+    digitalWrite(LED_PIN, LOW);
+
+    Serial.println("E-STOP BUTTON ACTIVATED");
+
+    emergencyStop = false;   // prevent repeated printing
+
+    while (true)
+    {
+      if (Serial.available())
+      {
+        String cmd = Serial.readStringUntil('\n');
+        cmd.trim();
+
+        if (cmd == "RESET")
+        {
+          Serial.println("SYSTEM RESET");
+          return;
+        }
+      }
+    }
+  }
+
+  if (Serial.available())
+  {
+    String cmd = Serial.readStringUntil('\n');
+    cmd.trim();
+
+    // Motor Control
+    if (cmd.startsWith("M"))
+    {
+      int speed = cmd.substring(1).toInt();
+
+      if (speed < 0) speed = 0;
+      if (speed > 255) speed = 255;
+
+      analogWrite(MOTOR_PWM, speed);
+
+      if (speed > 0)
+      {
+        digitalWrite(LED_PIN, HIGH);
+      }
+      else
+      {
+        digitalWrite(LED_PIN, LOW);
+      }
+
+      Serial.print("Motor Speed = ");
+      Serial.println(speed);
+    }
+
+    // Valve Open
+    else if (cmd == "OPEN")
+    {
+      digitalWrite(RELAY_PIN, LOW);
+
+      Serial.println("Valve Opened");
+    }
+
+    // Valve Close
+    else if (cmd == "CLOSE")
+    {
+      digitalWrite(RELAY_PIN, HIGH);
+
+      Serial.println("Valve Closed");
+    }
+
+    // Manual Reset
+    else if (cmd == "RESET")
+    {
+      Serial.println("System Ready");
+    }
+  }
+} 
