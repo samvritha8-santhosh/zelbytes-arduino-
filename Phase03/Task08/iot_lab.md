@@ -42,7 +42,7 @@ using the API key stored in `secrets.h` (gitignored, never committed).
 - API key is never logged, printed in screenshots, or included in commit messages.
 
 ## Verification
-- 10 sample readings were successfully posted under device_id `krishnaas_bench01`, each returning HTTP status **202**.
+- 10 sample readings were successfully posted under device_id `samvritha_bench01`, each returning HTTP status **202**.
 - Data was confirmed visible via **IoT Lab → API Explorer**, with the `temperature_c` series showing multiple recorded data points across all samples sent.
 
 ## Notes
