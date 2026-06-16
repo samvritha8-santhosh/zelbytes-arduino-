@@ -3,7 +3,7 @@ import random
 import time
 
 API = "https://careers.zelbytes.com/api/iot-lab/v1"
-KEY = "zil_mgvg23dwqlyd1tmmuhyvhafd64s0nfz6"
+KEY = "zil_......"
 
 headers = {
     "Content-Type": "application/json",
