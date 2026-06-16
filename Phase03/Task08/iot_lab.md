@@ -6,7 +6,7 @@ Arduino Uno to the Zelbytes IoT Learning Lab dashboard using a host Python
 script, since the Uno has no native WiFi capability.
 
 ## Device Information
-- **Device ID:** krishnaas_bench01
+- **Device ID:** samvritha_01
 - **Endpoint:** https://careers.zelbytes.com/api/iot-lab/v1/telemetry
 - **Telemetry Topic:** zelbytes/lab/65/telemetry
 
