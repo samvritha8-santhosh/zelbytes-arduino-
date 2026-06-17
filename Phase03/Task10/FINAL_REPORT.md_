@@ -1,0 +1,380 @@
+# FINAL REPORT
+
+## Smart Grow Bench Irrigation System
+
+### Intern Details
+
+* Name: Pranavu P Pillai
+* Branch: Electronics and Communication Engineering
+* Platform: Arduino UNO
+* Project: Smart Grow Bench Irrigation System
+
+---
+
+# 1. Introduction
+
+The Smart Grow Bench Irrigation System is an Arduino-based automation project designed to monitor environmental conditions and automatically irrigate plants when required. The system continuously measures soil moisture, temperature, humidity, and ambient light levels.
+
+When soil moisture falls below a predefined threshold, the Arduino activates a relay module which controls a solenoid valve. This allows automatic watering of plants without user intervention.
+
+The project demonstrates sensor interfacing, embedded control systems, relay operation, and basic agricultural automation.
+
+---
+
+# 2. Project Objectives
+
+The objectives of the project are:
+
+* Monitor soil moisture levels.
+* Monitor temperature and humidity.
+* Monitor light intensity.
+* Automate irrigation using a relay-controlled valve.
+* Reduce manual watering effort.
+* Demonstrate practical embedded-system design.
+
+---
+
+# 3. Hardware Bill of Materials
+
+| Sl NoComponentQuantityUnit Price (INR)Total Cost (INR) |                                     |   |      |      |
+| ------------------------------------------------------ | ----------------------------------- | - | ---- | ---- |
+| 1                                                      | Arduino UNO Clone                   | 1 | ₹500 | ₹500 |
+| 2                                                      | DHT11 Temperature & Humidity Sensor | 1 | ₹80  | ₹80  |
+| 3                                                      | Soil Moisture Sensor                | 1 | ₹100 | ₹100 |
+| 4                                                      | LDR Sensor Module                   | 1 | ₹30  | ₹30  |
+| 5                                                      | 5V Relay Module                     | 1 | ₹80  | ₹80  |
+| 6                                                      | 12V Solenoid Valve                  | 1 | ₹450 | ₹450 |
+| 7                                                      | Breadboard                          | 1 | ₹100 | ₹100 |
+| 8                                                      | Jumper Wire Set                     | 1 | ₹80  | ₹80  |
+| 9                                                      | USB Programming Cable               | 1 | ₹100 | ₹100 |
+| 10                                                     | 12V DC Power Adapter                | 1 | ₹250 | ₹250 |
+
+| | | | **Total Estimated Cost** | **₹1,770** |
+
+---
+
+## Cost Analysis
+
+The Smart Grow Bench Irrigation System was developed using low-cost and easily available electronic components. The Arduino UNO acts as the central controller while the DHT11, soil moisture sensor, and LDR provide environmental monitoring capabilities.
+
+The relay module and solenoid valve form the irrigation control subsystem. Based on sensor readings, the relay automatically controls water flow through the valve.
+
+The total estimated hardware cost of the project is approximately **₹1,770**, making it a cost-effective solution for educational demonstrations, laboratory experiments, and small-scale smart agriculture applications.
+
+Prices shown are approximate market values and may vary depending on supplier and location.4. System Architecture
+
+## Inputs
+
+* Soil Moisture Sensor
+* DHT11 Sensor
+* LDR Sensor
+
+## Controller
+
+* Arduino UNO
+
+## Outputs
+
+* Relay Module
+* Solenoid Valve
+
+The Arduino processes sensor data and controls irrigation based on predefined thresholds.
+
+---
+
+# 5. Wiring Connections
+
+## DHT11 Sensor
+
+| Pin  | Arduino |
+| ---- | ------- |
+| VCC  | 5V      |
+| GND  | GND     |
+| DATA | D2      |
+
+## Soil Moisture Sensor
+
+| Pin | Arduino |
+| --- | ------- |
+| VCC | 5V      |
+| GND | GND     |
+| A0  | A0      |
+
+## LDR Sensor
+
+| Pin    | Arduino |
+| ------ | ------- |
+| Output | A1      |
+
+## Relay Module
+
+| Pin | Arduino |
+| --- | ------- |
+| VCC | 5V      |
+| GND | GND     |
+| IN  | D8      |
+
+---
+
+# 6. Wiring Diagram
+
+Insert the wiring image below.
+
+If available, include a photograph of the assembled hardware.
+
+---
+
+# 7. Software Design
+
+The firmware was developed using Arduino IDE.
+
+Main functions:
+
+1. Read sensor values.
+2. Calculate soil moisture percentage.
+3. Compare moisture value with threshold.
+4. Control relay state.
+5. Display readings in Serial Monitor.
+
+---
+
+# 8. Calibration Methodology
+
+## Soil Moisture Sensor
+
+The soil moisture sensor was calibrated using dry and wet soil conditions.
+
+### Dry Soil
+
+Sensor inserted into dry soil.
+
+Observed reading:
+
+* Approximately 300
+
+### Wet Soil
+
+Sensor inserted into saturated soil.
+
+Observed reading:
+
+* Approximately 800
+
+### Threshold Selection
+
+A midpoint threshold of 500 was selected.
+
+Decision Logic:
+
+* Below threshold → Irrigation ON
+* Above threshold → Irrigation OFF
+
+---
+
+## DHT11 Sensor
+
+Temperature and humidity values were compared with room conditions.
+
+Observed range:
+
+* Temperature: 25°C to 32°C
+* Humidity: 50% to 80%
+
+---
+
+## LDR Sensor
+
+The sensor was tested under:
+
+* Bright sunlight
+* Indoor lighting
+* Dark conditions
+
+Thresholds were adjusted experimentally.
+
+---
+
+# 9. Control Logic
+
+The firmware executes the following algorithm:
+
+1. Read all sensors.
+2. Calculate soil moisture percentage.
+3. Compare with threshold.
+4. If soil is dry:
+
+   * Relay ON
+   * Valve OPEN
+5. If soil is wet:
+
+   * Relay OFF
+   * Valve CLOSED
+6. Repeat continuously.
+
+---
+
+# 10. Testing Procedure
+
+## Test 1: Sensor Verification
+
+Purpose:
+
+Verify all sensors produce valid readings.
+
+Result:
+
+PASS
+
+---
+
+## Test 2: Dry Soil Test
+
+Purpose:
+
+Verify automatic irrigation activation.
+
+Result:
+
+PASS
+
+---
+
+## Test 3: Wet Soil Test
+
+Purpose:
+
+Verify irrigation shutdown.
+
+Result:
+
+PASS
+
+---
+
+## Test 4: Continuous Operation
+
+Purpose:
+
+Observe long-term stability.
+
+Duration:
+
+30 minutes
+
+Result:
+
+PASS
+
+---
+
+# 11. Test Results
+
+| Test                   | Result |
+| ---------------------- | ------ |
+| DHT11 Reading          | PASS   |
+| Soil Moisture Reading  | PASS   |
+| LDR Reading            | PASS   |
+| Relay Operation        | PASS   |
+| Solenoid Valve Control | PASS   |
+| Auto Irrigation        | PASS   |
+
+---
+
+# 12. Sample Sensor Data
+
+| Temperature | Humidity | Soil Moisture | Valve |
+| ----------- | -------- | ------------- | ----- |
+| 24.6°C      | 56%      | 50%           | OFF   |
+| 30.3°C      | 77%      | 41%           | ON    |
+| 28.4°C      | 56%      | 70%           | OFF   |
+| 31.4°C      | 65%      | 45%           | ON    |
+| 27.1°C      | 67%      | 67%           | OFF   |
+
+---
+
+# 13. Known Limitations
+
+The following limitations were identified:
+
+* Soil moisture sensor may corrode over time.
+* DHT11 accuracy is limited.
+* No battery backup available.
+* Single irrigation zone only.
+* Water flow rate is not measured.
+
+---
+
+# 14. Future Improvements
+
+Possible future enhancements:
+
+* ESP8266 Wi-Fi integration
+* Cloud dashboard
+* Mobile application
+* Multi-zone irrigation
+* Solar power operation
+* SD card data logging
+
+---
+
+# 15. Instructions for Next Intern
+
+## Software Required
+
+* Arduino IDE 2.x
+* DHT Sensor Library
+* Adafruit Unified Sensor Library
+
+## Reflash Procedure
+
+1. Connect Arduino UNO using USB cable.
+2. Open Arduino IDE.
+3. Open `grow_bench.ino`.
+4. Select Arduino UNO board.
+5. Select correct serial port.
+6. Click Upload.
+7. Wait for successful upload.
+8. Open Serial Monitor.
+9. Verify sensor readings.
+
+---
+
+## Troubleshooting
+
+### Upload Error
+
+Check USB cable and COM port.
+
+### No Sensor Readings
+
+Check sensor wiring.
+
+### Relay Not Switching
+
+Verify relay VCC, GND, and IN connections.
+
+### Incorrect Values
+
+Recalibrate sensors and verify power supply.
+
+---
+
+# 16. Repository Structure
+
+```text
+README.md
+
+docs/
+├── FINAL_REPORT.md
+├── wiring.jpg
+└── hardware.jpg
+
+src/
+└── grow_bench.ino
+```
+
+---
+
+# 17. Conclusion
+
+The Smart Grow Bench Irrigation System successfully demonstrates automated irrigation using sensor feedback and relay control. The system reliably monitors environmental conditions and irrigates plants when soil moisture falls below the selected threshold. The project provides a practical foundation for future IoT-enabled smart agriculture applications.
