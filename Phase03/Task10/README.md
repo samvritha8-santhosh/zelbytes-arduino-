@@ -4,7 +4,7 @@
 
 ### Intern Details
 
-* Name: Pranavu P Pillai
+* Name: Samvritha Santhosh
 * Branch: Electronics and Communication Engineering
 * Platform: Arduino UNO
 * Project: Smart Grow Bench Irrigation System
