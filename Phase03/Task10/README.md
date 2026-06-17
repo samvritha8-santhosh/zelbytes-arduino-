@@ -359,22 +359,8 @@ Recalibrate sensors and verify power supply.
 
 ---
 
-# 16. Repository Structure
 
-```text
-README.md
 
-docs/
-├── FINAL_REPORT.md
-├── wiring.jpg
-└── hardware.jpg
-
-src/
-└── grow_bench.ino
-```
-
----
-
-# 17. Conclusion
+# 16. Conclusion
 
 The Smart Grow Bench Irrigation System successfully demonstrates automated irrigation using sensor feedback and relay control. The system reliably monitors environmental conditions and irrigates plants when soil moisture falls below the selected threshold. The project provides a practical foundation for future IoT-enabled smart agriculture applications.
