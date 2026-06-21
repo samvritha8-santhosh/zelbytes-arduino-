@@ -2,9 +2,9 @@
 
 ## **Student Information**
 
-**Name:** Anamika S S  
-**KTU ID:** SCT23EC023  
-**College:** Sree Chitra Thirunal College of Engineering  
+**Name:** Samvritha Santhosh 
+**KTU ID:** CHN23EC091
+**College:**College of Engineering Chengannur
 **Branch:** Electronics and Communication Engineering  
 **Internship:** Zelbytes Arduino Foundations Internship  
 **Task:** Task 10 – Final Firmware Report
