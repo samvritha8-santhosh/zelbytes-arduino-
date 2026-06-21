@@ -3,8 +3,11 @@
 ## **Student Information**
 
 **Name:** Samvritha Santhosh 
+
 **KTU ID:**   CHN23EC091
+
 **College:   **College of Engineering Chengannur
+
 **Branch:**  Electronics and Communication Engineering  
 **Internship:** Zelbytes Arduino Foundations Internship  
 **Task:** Task 10 – Final Firmware Report
